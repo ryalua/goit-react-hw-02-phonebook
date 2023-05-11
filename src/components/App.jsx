@@ -1,4 +1,5 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 import { AddContact } from './AddContact/AddContact';
 import { FormContacts } from './FormContacts/FormContacts';
 import { Section } from './Section/Section';
@@ -7,24 +8,22 @@ import { Section } from './Section/Section';
 export class App extends React.Component {
   state = {
     contacts: [],
-    name: '123',
+    name: '',
   };
 
-  handleInput = event => {
-    // this.setState(prevState => ({ name: prevState.event.currentTarget.value }));
-    this.setState({ name: event.currentTarget.value });
-  };
-
-  handleBtn = event => {
-    event.preventDefault();
-    // const finalBookData = {
-    //   id: nanoid(),
-    //   ...contact,
-    // };
-    this.setState({ contacts: event.currentTarget.value });
-    // this.setState(prevState => {
-    //   return { contacts: [...prevState.books, finalBookData] };
-    // });
+  handleContact = contact => {
+    const newContact = {
+      id: nanoid(),
+      ...contact,
+    };
+    console.log(newContact);
+    // this.setState(prevState => ({
+    //   contacts: [...prevState.contacts, newContact],
+    // }));
+    this.setState(prevState => {
+      return { contacts: [...prevState.contacts, contact] };
+    });
+    // this.setState({ contacts: [...this.state.contacts, newContact] });
     console.log(this.state);
   };
 
@@ -32,17 +31,14 @@ export class App extends React.Component {
     return (
       <>
         <Section title={'Phonebook'}>
-          <FormContacts
-            onValue={this.state.name}
-            onInputChange={this.handleInput}
-            onBtn={this.handleBtn}
-          />
+          <FormContacts onAddContact={this.handleContact} />
         </Section>
         <Section title={'Contacts'}>
           {/* {(this.state.good || this.state.neutral || this.state.bad) !== 0 ? ( */}
           <AddContact
+            // title={'Contacts'}
             onContacts={this.state.contacts}
-            onBtn={this.handleBtn}
+            // onBtn={this.handleBtn}
             // neutral={this.state.neutral}
             // bad={this.state.bad}
             // total={this.countTotalFeedback()}

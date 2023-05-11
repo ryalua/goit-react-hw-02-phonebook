@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 import { ListContacts, ItemContcact } from './AddContactStyled';
 
-export const AddContact = ({ onBtn }) => (
+export const AddContact = ({ onContacts }) => (
   <ListContacts>
-    <ItemContcact>{onBtn}</ItemContcact>
+    {/* {Array.isArray(onContacts) &&
+      onContacts.length > 0 &&
+      onContacts.map(contact => {
+        return <ItemContcact key={contact.id}>{onContacts}</ItemContcact>;
+      })} */}
   </ListContacts>
 );
 
