@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { ListContacts, ItemContact } from './AddContactStyled';
+import { Component } from 'react';
 
 export const AddContact = ({ contacts }) => (
   <ListContacts>
@@ -13,7 +14,7 @@ export const AddContact = ({ contacts }) => (
     {/* <ItemContact>{onContacts}</ItemContact>; */}
   </ListContacts>
 );
-
+console.log('Hello');
 AddContact.propTypes = {
   title: PropTypes.string,
   children: PropTypes.element,
