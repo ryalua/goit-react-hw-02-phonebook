@@ -3,16 +3,21 @@ import { ListContacts, ItemContact } from './AddContactStyled';
 import { Component } from 'react';
 
 export const AddContact = ({ contacts, number }) => (
-  <ListContacts>
+  <>
     {Array.isArray(contacts) &&
       contacts.length > 0 &&
       contacts.map(contact => {
         return (
-          <ItemContact key={contact.id}>{contact.contact.name}</ItemContact>
-          // <ItemContact>{contact.contact.number}</ItemContact>
+          <ListContacts>
+            <ItemContact key={contact.id}>
+              <p>{contact.contact.name}</p>
+              <p>{contact.contact.number}</p>
+            </ItemContact>
+            {/* <ItemContact key={contact.id}>{contact.contact.number}</ItemContact> */}
+          </ListContacts>
         );
       })}
-  </ListContacts>
+  </>
 );
 
 AddContact.propTypes = {

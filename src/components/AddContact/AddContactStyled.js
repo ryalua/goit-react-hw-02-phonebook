@@ -1,18 +1,27 @@
 import styled from '@emotion/styled';
 
 export const ListContacts = styled.ul`
-  display: flex;
-  flex-direction: column;
-  max-width: 350px;
   width: 100%;
-  margin: 20px auto 25px;
-  gap: 16px;
- 
-  padding: 10px
+  height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  // display: flex;
+  // align-items: center;
+
+  // justify-content: space-between;
+
+  border-radius: 10px;
+  background-color: #0aa;
 `;
 
 export const ItemContact = styled.li`
-  // display: flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+
+  font-size: 20px;
+  line-height: 1.5;
+  list-style-type: none;
+  color: #fff;
 `;
