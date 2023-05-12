@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { ListContacts, ItemContact } from './AddContactStyled';
 import { Component } from 'react';
 
-export const AddContact = ({ contacts, number }) => (
+export const AddContact = ({ contacts }) => (
   <>
     {Array.isArray(contacts) &&
       contacts.length > 0 &&
@@ -13,7 +13,6 @@ export const AddContact = ({ contacts, number }) => (
               <p>{contact.contact.name}</p>
               <p>{contact.contact.number}</p>
             </ItemContact>
-            {/* <ItemContact key={contact.id}>{contact.contact.number}</ItemContact> */}
           </ListContacts>
         );
       })}
