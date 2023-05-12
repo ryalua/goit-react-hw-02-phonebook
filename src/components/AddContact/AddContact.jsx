@@ -4,7 +4,7 @@ import { Component } from 'react';
 
 export const AddContact = ({ contacts, number }) => (
   <ListContacts>
-    {Array.isArray(contacts) &&
+    {Array.isArray(contacts) &&deploy red2
       contacts.length > 0 &&
       contacts.map(contact => {
         return (
@@ -12,7 +12,6 @@ export const AddContact = ({ contacts, number }) => (
           // <ItemContact>{contact.contact.number}</ItemContact>
         );
       })}
-    {/* <ItemContact>{onContacts}</ItemContact>; */}
   </ListContacts>
 );
 
