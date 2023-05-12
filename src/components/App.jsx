@@ -1,9 +1,10 @@
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import { AddContact } from './AddContact/AddContact';
 import { FormContacts } from './FormContacts/FormContacts';
 import { Section } from './Section/Section';
-// import { Notification } from './Notification/Notification';
+import 'react-toastify/dist/ReactToastify.css';
 
 export class App extends React.Component {
   state = {
@@ -14,40 +15,37 @@ export class App extends React.Component {
   handleContact = contact => {
     const newContact = {
       id: nanoid(),
-      ...contact,
+      contact,
     };
-    console.log(newContact);
-    // this.setState(prevState => ({
-    //   contacts: [...prevState.contacts, newContact],
-    // }));
-    this.setState(prevState => {
-      return { contacts: [...prevState.contacts, contact] };
+
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts, newContact],
+      name: contact.name,
+    }));
+
+    toast.success(`Contact of ${contact.name} successfully added!`, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
     });
-    // this.setState({ contacts: [...this.state.contacts, newContact] });
-    console.log(this.state);
   };
 
   render() {
+    // console.log(this.state);
     return (
       <>
         <Section title={'Phonebook'}>
           <FormContacts onAddContact={this.handleContact} />
         </Section>
         <Section title={'Contacts'}>
-          {/* {(this.state.good || this.state.neutral || this.state.bad) !== 0 ? ( */}
-          <AddContact
-            // title={'Contacts'}
-            onContacts={this.state.contacts}
-            // onBtn={this.handleBtn}
-            // neutral={this.state.neutral}
-            // bad={this.state.bad}
-            // total={this.countTotalFeedback()}
-            // positivePercentage={this.countPositiveFeedbackPercentage()}
-          />
-          {/* ) : (
-            <Notification message={'There is no feedback'} />
-          )} */}
+          <AddContact contacts={this.state.contacts} />
         </Section>
+        <ToastContainer />
       </>
     );
   }

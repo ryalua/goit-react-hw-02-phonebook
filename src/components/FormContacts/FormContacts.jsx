@@ -21,9 +21,7 @@ export class FormContacts extends Component {
     event.preventDefault();
 
     this.props.onAddContact(this.state);
-    // this.setState({ name: '' }); // сброс полей формы
-
-    console.log(this.state);
+    this.setState({ name: '' }); // сброс поля формы
   };
 
   render() {

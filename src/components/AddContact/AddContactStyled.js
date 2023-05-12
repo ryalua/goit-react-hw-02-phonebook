@@ -11,7 +11,7 @@ export const ListContacts = styled.ul`
   padding: 10px
 `;
 
-export const ItemContcact = styled.li`
+export const ItemContact = styled.li`
   // display: flex;
   align-items: center;
   gap: 10px;

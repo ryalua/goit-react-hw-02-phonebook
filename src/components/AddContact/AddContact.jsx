@@ -1,17 +1,22 @@
 import PropTypes from 'prop-types';
-import { ListContacts, ItemContcact } from './AddContactStyled';
+import { ListContacts, ItemContact } from './AddContactStyled';
 
-export const AddContact = ({ onContacts }) => (
+export const AddContact = ({ onContacts, contacts, name }) => (
   <ListContacts>
-    {/* {Array.isArray(onContacts) &&
-      onContacts.length > 0 &&
-      onContacts.map(contact => {
-        return <ItemContcact key={contact.id}>{onContacts}</ItemContcact>;
-      })} */}
+    {Array.isArray(contacts) &&
+      contacts.length > 0 &&
+      contacts.map(contact => {
+        console.log(contact);
+        console.log(contact.contact.name);
+        return (
+          <ItemContact key={contact.id}>{contact.contact.name}</ItemContact>
+        );
+      })}
+    {/* <ItemContact>{onContacts}</ItemContact>; */}
   </ListContacts>
 );
 
 AddContact.propTypes = {
-  // title: PropTypes.string,
-  // children: PropTypes.element,
+  title: PropTypes.string,
+  children: PropTypes.element,
 };
