@@ -10,6 +10,7 @@ export class App extends React.Component {
   state = {
     contacts: [],
     name: '',
+    number: '',
   };
 
   handleContact = contact => {
