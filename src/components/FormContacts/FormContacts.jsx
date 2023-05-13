@@ -9,7 +9,12 @@ import {
 
 export class FormContacts extends Component {
   state = {
-    // contacts: [],
+    // contacts: [
+    //   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+    //   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+    //   { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+    //   { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+    // ],
     name: '',
     number: '',
   };
@@ -27,6 +32,7 @@ export class FormContacts extends Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <>
         <StyledForm onSubmit={this.handleSubmit}>
@@ -60,28 +66,6 @@ export class FormContacts extends Component {
     );
   }
 }
-
-// export default FormContacts;
-
-// export const FormContacts = ({ onValue, onInputChange, onBtn }) => (
-//   <StyledForm onSubmit={onBtn}>
-//     <FormLabel className="form-label">
-//       <LabelName className="label-name">Name</LabelName>
-//       <input
-//         type="text"
-//         name="name"
-//         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-//         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-//         required
-//         value={onValue}
-//         onChange={onInputChange}
-//       />
-//     </FormLabel>
-//     <FormBtn type="submit" className="form-btn">
-//       Add contact
-//     </FormBtn>
-//   </StyledForm>
-// );
 
 FormContacts.propTypes = {
   // good: PropTypes.number.isRequired,

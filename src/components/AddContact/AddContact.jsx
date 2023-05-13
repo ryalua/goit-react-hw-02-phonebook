@@ -8,10 +8,10 @@ export const AddContact = ({ contacts }) => (
       contacts.length > 0 &&
       contacts.map(contact => {
         return (
-          <ListContacts>
-            <ItemContact key={contact.id}>
-              <p>{contact.contact.name}</p>
-              <p>{contact.contact.number}</p>
+          <ListContacts key={contact.id}>
+            <ItemContact>
+              <p>{contact.name}</p>
+              <p>{contact.number}</p>
             </ItemContact>
           </ListContacts>
         );
@@ -20,6 +20,6 @@ export const AddContact = ({ contacts }) => (
 );
 
 AddContact.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.element,
+  // title: PropTypes.string,
+  // children: PropTypes.element,
 };
