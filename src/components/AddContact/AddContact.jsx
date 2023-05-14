@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { ListContacts, ItemContact } from './AddContactStyled';
-import { Component } from 'react';
+// import { Component } from 'react';
 
 export const AddContact = ({ contacts }) => (
   <>
