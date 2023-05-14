@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   StyledForm,
   FormLabel,
@@ -61,9 +61,6 @@ export class FormContacts extends Component {
 }
 
 FormContacts.propTypes = {
-  // good: PropTypes.number.isRequired,
-  // neutral: PropTypes.number.isRequired,
-  // bad: PropTypes.number.isRequired,
-  // total: PropTypes.number.isRequired,
-  // positivePercentage: PropTypes.number.isRequired,
+  name: PropTypes.string,
+  number: PropTypes.number,
 };

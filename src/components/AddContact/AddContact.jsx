@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { ListContacts, ItemContact } from './AddContactStyled';
 
 export const AddContact = ({ contacts, filter }) => (
@@ -28,6 +28,6 @@ export const AddContact = ({ contacts, filter }) => (
 );
 
 AddContact.propTypes = {
-  // contacts: PropTypes.string,
-  // children: PropTypes.element,
+  contacts: PropTypes.array,
+  filter: PropTypes.string,
 };
