@@ -13,7 +13,6 @@ export class Filter extends Component {
   };
 
   render() {
-    // console.log(this.state.filter);
     return (
       <div>
         <LabelFilter className="label-name">Find contacts by name</LabelFilter>

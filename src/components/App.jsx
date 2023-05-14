@@ -20,6 +20,23 @@ export class App extends Component {
       number,
     };
 
+    if (this.state.contacts.some(contact => contact.name === name)) {
+      console.log('Hello');
+      console.log(this.state);
+
+      toast.error(`${name} is allready in contacts! `, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+      return;
+    }
+
     this.setState(prevState => ({
       contacts: [...prevState.contacts, newContact],
     }));
