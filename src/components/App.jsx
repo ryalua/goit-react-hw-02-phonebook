@@ -49,7 +49,7 @@ export class App extends Component {
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <>
         <Section title={'Phonebook'}>
@@ -57,7 +57,10 @@ export class App extends Component {
         </Section>
         <Section title={'Contacts'}>
           <Filter onFilter={this.handleQuery} />
-          <AddContact contacts={this.state.contacts} />
+          <AddContact
+            contacts={this.state.contacts}
+            filter={this.state.filter}
+          />
         </Section>
         <ToastContainer />
       </>

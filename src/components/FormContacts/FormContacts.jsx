@@ -26,7 +26,6 @@ export class FormContacts extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <>
         <StyledForm onSubmit={this.handleSubmit}>

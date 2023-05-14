@@ -8,11 +8,11 @@ export class Filter extends Component {
 
   handleFilter = event => {
     this.setState({ filter: event.currentTarget.value });
-    // this.props.onFilter(event.currentTarget.value);
+    this.props.onFilter(event.currentTarget.value);
   };
 
   render() {
-    // console.log(this.state);
+    // console.log(this.state.filter);
     return (
       <div>
         <LabelFilter className="label-name">Find contacts by name</LabelFilter>
