@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { ListContacts, ItemContact } from './AddContactStyled';
 
-export const AddContact = ({ contacts, filter }) => (
+export const AddContact = ({ contacts, filter, onDelete }) => (
   <>
     {Array.isArray(contacts) &&
       contacts.length > 0 &&
@@ -13,11 +13,7 @@ export const AddContact = ({ contacts, filter }) => (
               <ItemContact>
                 <p>{contact.name}</p>
                 <p>{contact.number}</p>
-                <button
-                  // className={css.button}
-                  type="button"
-                  // onClick={() => onDelete(id)}
-                >
+                <button type="button" onClick={() => onDelete(contact.id)}>
                   Delete
                 </button>
               </ItemContact>
@@ -30,4 +26,5 @@ export const AddContact = ({ contacts, filter }) => (
 AddContact.propTypes = {
   contacts: PropTypes.array,
   filter: PropTypes.string,
+  onDelete: PropTypes.func,
 };

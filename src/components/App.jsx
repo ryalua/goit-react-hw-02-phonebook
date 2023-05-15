@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
+
 import { AddContact } from './AddContact/AddContact';
 import { FormContacts } from './FormContacts/FormContacts';
 import { Section } from './Section/Section';
@@ -21,9 +22,6 @@ export class App extends Component {
     };
 
     if (this.state.contacts.some(contact => contact.name === name)) {
-      console.log('Hello');
-      console.log(this.state);
-
       toast.error(`${name} is allready in contacts! `, {
         position: 'top-right',
         autoClose: 5000,
@@ -57,8 +55,13 @@ export class App extends Component {
     this.setState({ filter: filter });
   };
 
+  deleteContact = contactId => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    }));
+  };
+
   render() {
-    // console.log(this.state);
     return (
       <>
         <Section title={'Phonebook'}>
@@ -69,6 +72,7 @@ export class App extends Component {
           <AddContact
             contacts={this.state.contacts}
             filter={this.state.filter}
+            onDelete={this.deleteContact}
           />
         </Section>
         <ToastContainer />
